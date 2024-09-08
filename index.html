@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #1f2937;
+            color: #fff;
+            width: 250px;
+            padding: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: 5px;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #2b3748;
+        }
+
+        .main {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .user-name {
+            font-weight: bold;
+        }
+
+        .search-bar {
+            width: 300px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .content {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1 1 300px; /* Adjust flex basis as needed */
+            min-height: 200px;
+        }
+
+        .card-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .card-body p {
+            margin-bottom: 0;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .card-footer i {
+            color: #333;
+            cursor: pointer;
+        }
+
+        .card-footer i:hover {
+            color: #1f2937;
+        }
+
+        .announcements {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1 1 300px; /* Adjust flex basis as needed */
+            min-height: 200px;
+        }
+
+        .announcements-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .announcements-body {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .announcements-body p {
+            margin-bottom: 0;
+        }
+
+        .announcements-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .announcements-footer i {
+            color: #333;
+            cursor: pointer;
+        }
+
+        .announcements-footer i:hover {
+            color: #1f2937;
+        }
+
+        .trending {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1 1 300px; /* Adjust flex basis as needed */
+            min-height: 200px;
+        }
+
+        .trending-header {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .trending-body {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .trending-body p {
+            margin-bottom: 0;
+        }
+
+        .trending-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .trending-footer i {
+            color: #333;
+            cursor: pointer;
+        }
+
+        .trending-footer i:hover {
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="#">
+                <i class="fa fa-home"></i>
+                Home
+            </a>
+            <a href="#">
+                <i class="fa fa-user"></i>
+                Profile
+            </a>
+            <a href="#">
+                <i class="fa fa-envelope"></i>
+                Messages
+            </a>
+            <a href="#">
+                <i class="fa fa-history"></i>
+                History
+            </a>
+            <a href="#">
+                <i class="fa fa-tasks"></i>
+                Tasks
+            </a>
+            <a href="#">
+                <i class="fa fa-users"></i>
+                Communities
+            </a>
+            <a href="#">
+                <i class="fa fa-cog"></i>
+                Settings
+            </a>
+            <a href="#">
+                <i class="fa fa-question-circle"></i>
+                Support
+            </a>
+            <a href="#">
+                <i class="fa fa-shield"></i>
+                Privacy
+            </a>
+        </div>
+        <div class="main">
+            <div class="header">
+                <div class="user-info">
+                    <img src="a-3d-render-of-a-young-indian-man-with-a-series-of-1rgZzO8DT8qj82uxsN9N-w-kgQi2F45Rd-vwx6V4eAmPw.jpeg" alt="User Profile" class="profile-image">
+                    <div>
+                        <h2 class="user-name">Vaktavya Sheel Pandey</h2>
+                        <p>Administrator</p>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" placeholder="Search..." class="search-bar">
+                    <button class="btn btn-primary">Search</button>
+                </div>
+            </div>
+            <div class="content">
+                <div class="card">
+                    <div class="card-header">
+                        Super Cool Project
+                    </div>
+                    <div class="card-body">
+                        <p>Sed tempus ut lacus ut scelerisque.</p>
+                        <p>Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.</p>
+                    </div>
+                    <div class="card-footer">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share-alt"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Less Cool Project
+                    </div>
+                    <div class="card-body">
+                        <p>Nullam condimentum ipsum ut lectus vehicula consectetur.</p>
+                        <p>Quisque sed dolor tincidunt, consectetur sapien et, facilisis dolor.</p>
+                        <p>Duis sem purus, dignissim ut sapien in, varius pellentesque lacus.</p>
+                    </div>
+                    <div class="card-footer">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share-alt"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Impossible App
+                    </div>
+                    <div class="card-body">
+                        <p>In hac habitasse platea dictumst.</p>
+                        <p>Vivamus dictum rutrum arcu, a placerat velit sagittis id.</p>
+                    </div>
+                    <div class="card-footer">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share-alt"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Easy Peasy App
+                    </div>
+                    <div class="card-body">
+                        <p>Etiam cursus eros ac efficitur fringilla.</p>
+                        <p>Vestibulum dignissim urna eget accumsan aliquam.</p>
+                        <p>Curabitur dignissim nisi in tortor commodo, ac bibendum magna tincidunt.</p>
+                    </div>
+                    <div class="card-footer">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share-alt"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Ad Blocker
+                    </div>
+                    <div class="card-body">
+                        <p>Quisque eget rutrum nisl.</p>
+                        <p>Nam augue justo, cursus vitae metus vel, pharetra hendrerit felis.</p>
+                        <p>Aliquam sed malesuada eros.</p>
+                    </div>
+                    <div class="card-footer">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share-alt"></i>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        Money Maker
+                    </div>
+                    <div class="card-body">
+                        <p>Praesent convallis, libero quis congue elementum, nunc ante faucibus sapien, ac scelerisque tortor purus sit amet ex.</p>
+                        <p>Pellentesque mollis nec sem vel aliquam.</p>
+                    </div>
+                    <div class="card-footer">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share-alt"></i>
+                    </div>
+                </div>
+                <div class="announcements">
+                    <div class="announcements-header">
+                        Announcements
+                    </div>
+                    <div class="announcements-body">
+                        <p>Vestibulum condimentum tellus lacus, in accumsan elit maximus ac.</p>
+                        <p>Donec hendrerit sodales congue...</p>
+                    </div>
+                    <div class="announcements-footer">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share-alt"></i>
+                    </div>
+                </div>
+                <div class="trending">
+                    <div class="trending-header">
+                        Trending
+                    </div>
+                    <div class="trending-body">
+                        <p>Nam vel lectus tincidunt, rutrum nulla eu, omare libero.</p>
+                        <p>Aliquam dictum accumsan porttitor...</p>
+                    </div>
+                    <div class="trending-footer">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-eye"></i>
+                        <i class="fa fa-share-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/your_font_awesome_kit_id.js" crossorigin="anonymous"></script>
+</body>
+</html>
